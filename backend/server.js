@@ -48,7 +48,7 @@ connectDB();
 // -----------------------------
 
 app.use(cors({
-    origin: "https://polaris-jade-nu.vercel.app",
+    origin: "https://polaris-rhodug5ux-ayush-4e55.vercel.app",
     credentials: true
 }));
 app.use(express.json());
