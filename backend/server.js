@@ -17,6 +17,8 @@ const LocalStrategy = require("passport-local").Strategy;
 
 const app = express();
 
+app.set("trust proxy", 1);
+
 const PORT = process.env.PORT || 5000;
 
 async function connectDB() {
@@ -46,7 +48,7 @@ connectDB();
 // -----------------------------
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://polaris-jade-nu.vercel.app",
     credentials: true
 }));
 app.use(express.json());
@@ -65,7 +67,7 @@ app.use(
               maxAge: 14 * 24 * 60 * 60 * 1000,
               httpOnly: true,
                 secure: false,
-               sameSite: "lax"
+               sameSite: "none"
         }
     })
 );
