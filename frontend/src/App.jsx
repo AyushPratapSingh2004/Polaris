@@ -22,7 +22,7 @@ const [email, setEmail] = useState("");
         async function checkLogin() {
             try {
                 const response = await fetch(
-                    `${import.meta.env.VITE_API_URL}/api/me`,
+                    `/api/me`,
                     {
                         credentials: "include"
                     }
@@ -53,7 +53,7 @@ const [email, setEmail] = useState("");
 
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/login`,
+                `/api/login`,
                 {
                     method: "POST",
                     headers: {
@@ -96,7 +96,7 @@ const [email, setEmail] = useState("");
 
     try {
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/signup`,
+            `/api/signup`,
             {
                 method: "POST",
                 headers: {
@@ -135,7 +135,7 @@ const [email, setEmail] = useState("");
     async function loadProgress() {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/progress`,
+                `/api/progress`,
                 {
                     method: "POST",
                     credentials: "include"
@@ -160,7 +160,7 @@ const [email, setEmail] = useState("");
     async function startLearning(skill) {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/progress/learning`,
+                `/api/progress/learning`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -192,7 +192,7 @@ const [email, setEmail] = useState("");
     async function completeSkill(skill) {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/progress/complete`,
+                `/api/progress/complete`,
                 {
                     method: "POST",
                     credentials: "include",
@@ -226,7 +226,7 @@ const [email, setEmail] = useState("");
     async function refreshRecommendations() {
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/recommendations`,
+                `/api/recommendations`,
                 {
                     method: "POST",
                     credentials: "include"
@@ -255,7 +255,7 @@ const [email, setEmail] = useState("");
     async function logout() {
     try {
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/api/logout`,
+            `/api/logout`,
             {
                 method: "POST",
                 credentials: "include"
@@ -291,7 +291,7 @@ const [email, setEmail] = useState("");
 
         try {
             const response = await fetch(
-                `${import.meta.env.VITE_API_URL}/api/generate-path`,
+                `/api/generate-path`,
                 {
                     method: "POST",
                     headers: {

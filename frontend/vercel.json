@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://polaris-backend-cp9o.onrender.com/api/:path*"
+    }
+  ]
+}
