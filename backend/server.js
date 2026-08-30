@@ -120,7 +120,7 @@ app.post("/api/generate-path", async (req, res) => {
 
         // 3. Send message to Python
         const response = await axios.post(
-            "http://127.0.0.1:8000/generate-path",
+            "https://polaris-hpzr.onrender.com/generate-path",
             {
                 message: message
             }
@@ -515,7 +515,7 @@ app.post("/api/recommendations", async (req, res) => {
 
         // Send information to Python
         const response = await axios.post(
-            "http://127.0.0.1:8000/recommend",
+            "https://polaris-hpzr.onrender.com/recommend",
             {
                 goal: learningPath.profile.goal,
 
