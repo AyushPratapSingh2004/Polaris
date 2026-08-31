@@ -18,30 +18,42 @@ function App() {
 const [email, setEmail] = useState("");
     const [showSignup, setShowSignup] = useState(false);
 
-    useEffect(() => {
-        async function checkLogin() {
-            try {
-                const response = await fetch(
-                    `/api/me`,
-                    {
-                        credentials: "include"
-                    }
-                );
+   useEffect(() => {
 
-                if (response.ok) {
-                    const data = await response.json();
-                    setUser(data.user);
-                    await loadProgress();
+    // Wake up the AI service
+    fetch("https://polaris-hpzr.onrender.com/")
+        .catch(() => {
+            // Ignore errors during wake-up
+        });
+
+    async function checkLogin() {
+        try {
+            const response = await fetch(
+                `/api/me`,
+                {
+                    credentials: "include"
                 }
-            } catch (error) {
-                console.error("Authentication check failed:", error);
-            } finally {
-                setCheckingAuth(false);
-            }
-        }
+            );
 
-        checkLogin();
-    }, []);
+            if (response.ok) {
+                const data = await response.json();
+                setUser(data.user);
+                await loadProgress();
+            }
+
+        } catch (error) {
+            console.error(
+                "Authentication check failed:",
+                error
+            );
+        } finally {
+            setCheckingAuth(false);
+        }
+    }
+
+    checkLogin();
+
+}, []);
 
     async function login() {
         if (!username || !password) {
